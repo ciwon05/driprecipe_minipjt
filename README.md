@@ -14,7 +14,7 @@
 - **Day 4: 도구 다중 결합** — 한 질문에서 원두 조회 → 레시피 계산 → 문서 검색(교정은 맛 분류 → 교정 계산 → 문서 검색)을 이어서 부른다. 숫자는 모두 결정적 도구가 계산하고 모델은 계산하지 않는다.
 - **Day 5: 가드레일 + 미들웨어** — `before_agent` 입력 가드레일이 프롬프트 인젝션과 건강 · 카페인 질문을 모델 호출 없이 정해진 답으로 끊는다. `after_agent` 출력 가드레일은 고정 안내 문구를 보장하고, 매버릭이 아닌 그라인더에 대한 클릭 수를 지운다.
 - **Day 7: 단기 메모리** — LangGraph `InMemorySaver` 체크포인터와 선택 필드 `thread_id`로 교정 회차와 직전 레시피를 이어 간다([ADR-0003](docs/adr/0003-optional-thread-id-for-correction-rounds.md)).
-- **Day 7: Trace** — API 응답의 `trace`에 입력, 도구 호출(입력 · 출력), 가드레일, 최종 답변을 순서대로 담는다. LangSmith는 `.env`에 키를 넣으면 켜진다(아래 실행 방법).
+- **Day 7: Trace** — API 응답의 `trace`에 입력, 도구 호출(입력 · 출력), 가드레일, 최종 답변을 순서대로 담는다. LangSmith에도 연동해 실행마다 에이전트 · 모델 호출 · 도구 호출 트레이스를 `driprecipe-minipjt` 프로젝트에 기록한다(`.env`의 `LANGSMITH_*` 설정, 코드 변경 없음).
 - **Day 7: 평가** — 인-아웃 세트 20건을 세 가지로 채점한다. ① 기대 도구를 호출했는지 ② 답변 숫자가 도구 출력과 같은지 ③ LLM-as-Judge. 여기에 RAGAS 지표 4종을 더한다.
 
 ## 아키텍처
@@ -60,10 +60,10 @@ AWS_DEFAULT_REGION=us-east-1
 BEDROCK_MODEL_ID=global.anthropic.claude-sonnet-4-5-20250929-v1:0
 BEDROCK_FAST_MODEL_ID=us.anthropic.claude-haiku-4-5-20251001-v1:0
 BEDROCK_EMBED_MODEL_ID=amazon.titan-embed-text-v2:0
-# LangSmith 트레이스(선택)
+# LangSmith 트레이스
 LANGSMITH_TRACING=true
 LANGSMITH_API_KEY=...
-LANGSMITH_PROJECT=meridrip-agent
+LANGSMITH_PROJECT=driprecipe-minipjt
 
 # 3) API 서버
 uvicorn server:app --app-dir src --port 8000
