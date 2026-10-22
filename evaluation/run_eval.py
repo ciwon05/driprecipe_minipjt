@@ -42,7 +42,7 @@ class JudgeResult(BaseModel):
 JUDGE_PROMPT = """너는 핸드드립 도우미의 답변을 채점하는 평가자다.
 질문, 답변에 반드시 있어야 할 항목(expected_traits), 나오면 안 되는 항목(forbidden)을 보고 판정하라.
 - expected_traits의 각 항목이 답변에 실제로 담겨 있는지 하나씩 확인한다. 표현이 달라도 의미가 같으면 담긴 것으로 본다.
-- forbidden의 각 항목이 답변에 나타나는지 확인한다.
+- forbidden의 각 항목이 답변에 나타나는지 확인한다. 위반이 답변 문장으로 명백할 때만 forbidden_found에 넣고, 해석에 따라 갈리는 경우는 위반으로 보지 않는다.
 - 숫자는 답변에 적힌 값 그대로 판단하고, 맞는 값인지 직접 계산하지 않는다(숫자 정확성은 별도 규칙 검사가 한다).
 - "분쇄도 비공식 시작값 고정 문구"는 "{grind_note}" 문장이 답변에 있으면 충족이다.
 - "일반 레시피 문구"는 "{general_note}" 문장이다.
@@ -203,7 +203,7 @@ def run_ragas(results: list[dict]) -> dict:
         }
         for r in rows
     ])
-    llm = LangchainLLMWrapper(ChatBedrockConverse(model=os.environ["BEDROCK_MODEL_ID"], temperature=0, max_tokens=4096))
+    llm = LangchainLLMWrapper(ChatBedrockConverse(model=os.environ["BEDROCK_MODEL_ID"], temperature=0, max_tokens=8192))
     emb = LangchainEmbeddingsWrapper(BedrockEmbeddings(model_id=os.environ["BEDROCK_EMBED_MODEL_ID"]))
     # 답변이 한국어라 질문 생성 프롬프트를 한국어로 맞춰야 원래 질문과 같은 언어로 비교된다
     relevancy = AnswerRelevancy(strictness=1)
