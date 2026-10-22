@@ -1,0 +1,102 @@
+{
+  "roastery": "메리드립 로스터스",
+  "note": "가상의 로스터리와 원두다. recipe_v60은 V60 기준 권장 레시피이고, 다른 드리퍼는 calc_recipe가 보정한다. grind_clicks는 홀츠클로츠 매버릭 2.0 기준 비공식 시작값이다.",
+  "beans": [
+    {
+      "id": "MD-01",
+      "name": "에티오피아 예가체프 워시드",
+      "aliases": ["예가체프 워시드", "예가체프"],
+      "origin": "에티오피아 게데오 지역 예가체프",
+      "process": "워시드",
+      "roast_level": "라이트",
+      "cup_notes": ["자스민", "레몬", "홍차"],
+      "flavor_profile": {"acidity": 5, "sweetness": 3, "body": 2},
+      "recipe_v60": {"dose_g": 15, "ratio": 16, "water_temp_c": 93, "grind_clicks": 205, "total_time_s": 150},
+      "doc_id": "bean_md01_yirgacheffe_washed"
+    },
+    {
+      "id": "MD-02",
+      "name": "에티오피아 구지 내추럴",
+      "aliases": ["구지 내추럴", "구지"],
+      "origin": "에티오피아 오로미아 지역 구지",
+      "process": "내추럴",
+      "roast_level": "라이트",
+      "cup_notes": ["블루베리", "딸기잼", "밀크초콜릿"],
+      "flavor_profile": {"acidity": 4, "sweetness": 5, "body": 3},
+      "recipe_v60": {"dose_g": 15, "ratio": 15, "water_temp_c": 92, "grind_clicks": 210, "total_time_s": 160},
+      "doc_id": "bean_md02_guji_natural"
+    },
+    {
+      "id": "MD-03",
+      "name": "케냐 AA 워시드",
+      "aliases": ["케냐 AA", "케냐"],
+      "origin": "케냐 니에리",
+      "process": "워시드",
+      "roast_level": "라이트",
+      "cup_notes": ["블랙커런트", "자몽", "토마토"],
+      "flavor_profile": {"acidity": 5, "sweetness": 3, "body": 3},
+      "recipe_v60": {"dose_g": 15, "ratio": 16, "water_temp_c": 94, "grind_clicks": 205, "total_time_s": 150},
+      "doc_id": "bean_md03_kenya_aa_washed"
+    },
+    {
+      "id": "MD-04",
+      "name": "코스타리카 타라주 허니",
+      "aliases": ["타라주 허니", "코스타리카"],
+      "origin": "코스타리카 타라주",
+      "process": "허니",
+      "roast_level": "미디엄라이트",
+      "cup_notes": ["복숭아", "꿀", "오렌지"],
+      "flavor_profile": {"acidity": 4, "sweetness": 4, "body": 2},
+      "recipe_v60": {"dose_g": 15, "ratio": 16, "water_temp_c": 92, "grind_clicks": 212, "total_time_s": 160},
+      "doc_id": "bean_md04_tarrazu_honey"
+    },
+    {
+      "id": "MD-05",
+      "name": "콜롬비아 우일라 무산소 발효",
+      "aliases": ["우일라 무산소", "무산소 발효", "콜롬비아 무산소"],
+      "origin": "콜롬비아 우일라",
+      "process": "무산소 발효",
+      "roast_level": "라이트",
+      "cup_notes": ["적포도", "시나몬", "럼"],
+      "flavor_profile": {"acidity": 4, "sweetness": 5, "body": 3},
+      "recipe_v60": {"dose_g": 15, "ratio": 15, "water_temp_c": 91, "grind_clicks": 210, "total_time_s": 155},
+      "doc_id": "bean_md05_huila_anaerobic"
+    },
+    {
+      "id": "MD-06",
+      "name": "콜롬비아 수프리모 허니",
+      "aliases": ["수프리모 허니", "콜롬비아 수프리모", "수프리모"],
+      "origin": "콜롬비아 나리뇨",
+      "process": "허니",
+      "roast_level": "미디엄",
+      "cup_notes": ["캐러멜", "사과", "밀크초콜릿"],
+      "flavor_profile": {"acidity": 3, "sweetness": 4, "body": 3},
+      "recipe_v60": {"dose_g": 15, "ratio": 16, "water_temp_c": 91, "grind_clicks": 218, "total_time_s": 165},
+      "doc_id": "bean_md06_supremo_honey"
+    },
+    {
+      "id": "MD-07",
+      "name": "과테말라 안티구아 워시드",
+      "aliases": ["안티구아 워시드", "과테말라 안티구아", "안티구아"],
+      "origin": "과테말라 안티구아",
+      "process": "워시드",
+      "roast_level": "미디엄",
+      "cup_notes": ["다크초콜릿", "견과류", "스모키"],
+      "flavor_profile": {"acidity": 3, "sweetness": 3, "body": 4},
+      "recipe_v60": {"dose_g": 15, "ratio": 15, "water_temp_c": 91, "grind_clicks": 220, "total_time_s": 165},
+      "doc_id": "bean_md07_antigua_washed"
+    },
+    {
+      "id": "MD-08",
+      "name": "브라질 세하도 내추럴",
+      "aliases": ["세하도 내추럴", "브라질 세하도", "브라질"],
+      "origin": "브라질 미나스제라이스 세하도",
+      "process": "내추럴",
+      "roast_level": "미디엄다크",
+      "cup_notes": ["다크초콜릿", "땅콩", "흑설탕"],
+      "flavor_profile": {"acidity": 1, "sweetness": 3, "body": 5},
+      "recipe_v60": {"dose_g": 15, "ratio": 15, "water_temp_c": 89, "grind_clicks": 225, "total_time_s": 180},
+      "doc_id": "bean_md08_cerrado_natural"
+    }
+  ]
+}
